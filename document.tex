@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[russian]{babel}
+\voffset=-10mm
+\oddsidemargin=5mm
+\evensidemargin=0mm
+\textheight=235mm
+\textwidth=170mm
+\topmargin=-7.2mm
+\newtheorem{theorem}{\hskip\parindent Теорема}%[section]
+\newtheorem{definition}{\hskip\parindent Определение}%[section]
+\newtheorem{corollary}{\hskip\parindent Следствие}%[section]
+\newtheorem{lemma}{\hskip\parindent Лемма}%[section]
+\newtheorem{remark}{\hskip\parindent Замечание}%[section]
+\newtheorem{example}{\hskip\parindent Пример}%[section]
+\begin{document}
+	\section{Линейные ограниченные функционалы на нормированном пространстве}
+	Пусть $(X,\|\cdot\|)$ --- нормированное пространство над полем $K$.
+	\begin{definition}
+		\textbf{Функционалом} на $X$ будем называть отображение $f: X\to K$.
+	\end{definition}
+	\begin{definition}
+		Функционал $f$ называется \textbf{линейным}, если для любых $\alpha$, $\beta\in K$ и любых $x$, $y\in X$
+		\begin{equation*}
+			f(\alpha x+\beta y)=\alpha\cdot f(x)+\beta\cdot f(y)
+		\end{equation*}
+	\end{definition}
+	\begin{definition}
+		Функционал $f$ называется \textbf{ограниченным}, если существует постоянная $C\geqslant0$ такая, что для любого $x\in X$
+		\begin{equation*}
+			|f(x)|\leqslant C\|x\|
+		\end{equation*}
+	\end{definition}
+	\section{Норма функционала}
+	\section{Примеры вычисления норм функционалов}
+\end{document}
