@@ -33,6 +33,75 @@
 			|f(x)|\leqslant C\|x\|
 		\end{equation*}
 	\end{definition}
+
+Пусть $(X,\|\cdot\|_X)$, $(Y,\|\cdot\|_Y)$ --- нормированные пространства. Обозначим $LB(X,Y)$ --- множество линейных ограниченных операторов $A:X\to Y$.
+\begin{theorem}
+	$LB(X,Y)$ полно, если $Y$ полно.
+\end{theorem}
+
+Множество $LB(X,K)$ линейных ограниченных функционалов называется \textbf{сопряжённым пространством} к $X$ и обозначается $X'$.
+
+Так как в курсе $K=\mathbb{R}$ или $K=\mathbb{C}$ и оба эти пространства полны, то $X'$ полно.
 	\section{Норма функционала}
+	\begin{definition}
+		Пусть $X$ --- нормированное пространство, $f\in X'$. \textbf{Норма} функционала $f$:
+		\begin{equation*}
+			\|f\|=\sup\limits_{\|x\|\leqslant1}|f(x)|
+		\end{equation*}
+	\end{definition}
+\begin{theorem}
+	
+\end{theorem}
 	\section{Примеры вычисления норм функционалов}
+	\begin{example}
+		\begin{equation*}
+			X=\mathbb{R}^n
+		\end{equation*}
+	\end{example}
+	Зафиксируем произвольный базис $\left\{e_k\right\}_{k=1}^{n}$, тогда любой элемент $x\in X$ представляется в виде
+	\begin{equation*}
+		x=\sum\limits_{k=1}^{n}\alpha_k e_k,
+	\end{equation*}
+	Будем считать, что норма $\|\cdot\|$ --- евклидова. Пусть $f\in X'$, тогда
+	\begin{equation*}
+		f(x)=f\left(\sum\limits_{k=1}^{n}\alpha_k e_k\right)=\sum\limits_{k=1}^{n}\alpha_k f(e_k)
+	\end{equation*}
+	Обозначим $\xi_k=f(e_k)$, $\xi=(\xi_1,\dots, x_n)$, тогда
+	\begin{equation*}
+		f(x)=\langle x,\xi\rangle
+	\end{equation*}
+	Используя неравенство Коши-Буняковского, имеем
+	\begin{equation*}
+		|f(x)|\leqslant\|x\|\cdot\|\xi\| \Longrightarrow \|f\|\leqslant\|\xi\|
+	\end{equation*}
+	Положим $x=\frac{\xi}{\|\xi\|}$, тогда
+	\begin{equation*}
+		|f(x)|=\left|\langle\frac{\xi}{\|\xi\|},\xi\rangle\right|=\frac{\|\xi\|^2}{\|\xi\|}=\|\xi\| \Longrightarrow \|f\|\geqslant\xi
+	\end{equation*}
+	Таким образом, $\|f\|=\|\xi\|$.
+	\begin{example}
+		\begin{equation*}
+			X=L^p[0,1], \quad f(x)=\int\limits_{0}^{1}a(t)x(t)\,dt, \quad a\in L^q[0,1], \quad \frac{1}{p}+\frac{1}{q}=1
+		\end{equation*}
+	\end{example}
+Линейность очевидна.
+\begin{equation*}
+	\left|\int\limits_{0}^{1}a(t)x(t)\,dt\right|\leqslant\left(\int\limits_{0}^{1}|x(t)|^p\,dt\right)^{\frac{1}{p}}\cdot\left(\int\limits_{0}^{1}|a(t)|^q\,dt\right)^{\frac{1}{q}}=\|x\|_p\cdot\|a\|_q
+\end{equation*}
+то есть $|f(x)|\leqslant \|a\|_q\cdot \|x\|_p$.
+
+Положим
+\begin{equation*}
+	x(t)=\frac{f}{f},
+\end{equation*}
+тогда
+\begin{equation*}
+	|f(x)|=
+\end{equation*}
+Таким образом, $\|f\|=\|a\|_q$.
+\begin{example}
+	\begin{equation*}
+		X=l^p, \quad 1\leqslant p<\infty
+	\end{equation*}
+\end{example}
 \end{document}
