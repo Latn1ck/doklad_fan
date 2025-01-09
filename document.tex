@@ -16,92 +16,137 @@
 \newtheorem{remark}{\hskip\parindent Замечание}%[section]
 \newtheorem{example}{\hskip\parindent Пример}%[section]
 \begin{document}
-	\section{Линейные ограниченные функционалы на нормированном пространстве}
-	Пусть $(X,\|\cdot\|)$ --- нормированное пространство над полем $K$.
-	\begin{definition}
-		\textbf{Функционалом} на $X$ будем называть отображение $f: X\to K$.
-	\end{definition}
-	\begin{definition}
-		Функционал $f$ называется \textbf{линейным}, если для любых $\alpha$, $\beta\in K$ и любых $x$, $y\in X$
-		\begin{equation*}
-			f(\alpha x+\beta y)=\alpha\cdot f(x)+\beta\cdot f(y)
-		\end{equation*}
-	\end{definition}
-	\begin{definition}
-		Функционал $f$ называется \textbf{ограниченным}, если существует постоянная $C\geqslant0$ такая, что для любого $x\in X$
-		\begin{equation*}
-			|f(x)|\leqslant C\|x\|
-		\end{equation*}
-	\end{definition}
+\section{Линейные ограниченные функционалы на нормированном пространстве}
+Пусть $(X,\|\cdot\|)$ --- нормированное пространство над полем $K$.
+\begin{definition}
+	\textbf{Функционалом} на $X$ будем называть отображение $f: X\to K$.
+\end{definition}
+\begin{definition}
+	Функционал $f$ называется \textbf{линейным}, если для любых $\alpha$, $\beta\in K$ и любых $x$, $y\in X$
+	\begin{equation*}
+		f(\alpha x+\beta y)=\alpha\cdot f(x)+\beta\cdot f(y)
+	\end{equation*}
+\end{definition}
+\begin{definition}
+	Функционал $f$ называется \textbf{ограниченным}, если существует постоянная $C\geqslant0$ такая, что для любого $x\in X$
+	\begin{equation*}
+		|f(x)|\leqslant C\|x\|
+	\end{equation*}
+\end{definition}
 
 Пусть $(X,\|\cdot\|_X)$, $(Y,\|\cdot\|_Y)$ --- нормированные пространства. Обозначим $LB(X,Y)$ --- множество линейных ограниченных операторов $A:X\to Y$.
 \begin{theorem}
-	$LB(X,Y)$ полно, если $Y$ полно.
+$LB(X,Y)$ полно, если $Y$ полно.
 \end{theorem}
 
 Множество $LB(X,K)$ линейных ограниченных функционалов называется \textbf{сопряжённым пространством} к $X$ и обозначается $X'$.
 
 Так как в курсе $K=\mathbb{R}$ или $K=\mathbb{C}$ и оба эти пространства полны, то $X'$ полно.
-	\section{Норма функционала}
-	\begin{definition}
-		Пусть $X$ --- нормированное пространство, $f\in X'$. \textbf{Норма} функционала $f$:
-		\begin{equation*}
-			\|f\|=\sup\limits_{\|x\|\leqslant1}|f(x)|
-		\end{equation*}
-	\end{definition}
+\section{Норма функционала}
+\begin{definition}
+	Пусть $X$ --- нормированное пространство, $f\in X'$. \textbf{Норма} функционала $f$:
+	\begin{equation*}
+		\|f\|=\sup\limits_{\|x\|\leqslant1}|f(x)|
+	\end{equation*}
+\end{definition}
 \begin{theorem}
-	
+
 \end{theorem}
-	\section{Примеры вычисления норм функционалов}
-	\begin{example}
-		\begin{equation*}
-			X=\mathbb{R}^n
-		\end{equation*}
-	\end{example}
-	Зафиксируем произвольный базис $\left\{e_k\right\}_{k=1}^{n}$, тогда любой элемент $x\in X$ представляется в виде
+\section{Примеры вычисления норм функционалов}
+\begin{example}
 	\begin{equation*}
-		x=\sum\limits_{k=1}^{n}\alpha_k e_k,
+		X=\mathbb{R}^n
 	\end{equation*}
-	Будем считать, что норма $\|\cdot\|$ --- евклидова. Пусть $f\in X'$, тогда
+\end{example}
+Зафиксируем произвольный базис $\left\{e_k\right\}_{k=1}^{n}$, тогда любой элемент $x\in X$ представляется в виде
+\begin{equation*}
+	x=\sum\limits_{k=1}^{n}\alpha_k e_k,
+\end{equation*}
+Будем считать, что норма $\|\cdot\|$ --- евклидова. Пусть $f\in X'$, тогда
+\begin{equation*}
+	f(x)=f\left(\sum\limits_{k=1}^{n}\alpha_k e_k\right)=\sum\limits_{k=1}^{n}\alpha_k f(e_k)
+\end{equation*}
+Обозначим $\xi_k=f(e_k)$, $\xi=(\xi_1,\dots, x_n)$, тогда
+\begin{equation*}
+	f(x)=\langle x,\xi\rangle
+\end{equation*}
+Используя неравенство Коши-Буняковского, имеем
+\begin{equation*}
+	|f(x)|\leqslant\|x\|\cdot\|\xi\| \Longrightarrow \|f\|\leqslant\|\xi\|
+\end{equation*}
+Положим $x_0=\frac{\xi}{\|\xi\|}\in\mathbb{R}^n$, тогда
+\begin{equation*}
+	|f(x_0)|=\left|\langle\frac{\xi}{\|\xi\|},\xi\rangle\right|=\frac{\|\xi\|^2}{\|\xi\|}=\|\xi\| \Longrightarrow \|f\|\geqslant\xi
+\end{equation*}
+Таким образом, $\|f\|=\|\xi\|$.
+\begin{example}
+\begin{equation*}
+	X=l^p, \quad 1\leqslant p<\infty
+\end{equation*}
+\end{example}
+Пусть $u\in l^q$, 
+\begin{equation*}
+f(x)=\sum\limits_{k=1}^{\infty}x_ku_k
+\end{equation*}
+Неравенство Гёльдера
+\begin{equation*}
+|f(x)|=\left|\sum\limits_{k=1}^{\infty}x_ku_k\right|\leqslant\left(\sum\limits_{k=1}^{\infty}|x_k|^p\right)^{\frac{1}{p}}\cdot\left(\sum\limits_{k=1}^{\infty}|u_k|^q\right)^{\frac{1}{q}}=\|x\|_p\|u\|_q \Longrightarrow \|f\|\leqslant\|u\|_q
+\end{equation*}
+Обозначим
+\begin{equation*}
+e_k=(0,0,\dots,0,1,0,0,\dots),
+\end{equation*}
+тогда любой элемент $x\in l^p$ представляется в виде
+\begin{equation*}
+x=\sum\limits_{k=1}^{\infty}x_ke_k
+\end{equation*}
+так как
+\begin{equation*}
+\left\|x-\sum\limits_{k=1}^{n}x_ke_k\right\|=\left(\sum\limits_{k=n+1}^{\infty}|x_k|^p\right)^{\frac{1}{p}}\to0, \quad n\to\infty,
+\end{equation*}
+поэтому
+\begin{equation*}
+f(x)=f\left(\sum\limits_{k=1}^{\infty}x_ke_k\right)=\sum\limits_{k=1}^{\infty}x_kf(e_k)=\sum\limits_{k=1}^{\infty}x_ku_k
+\end{equation*}
+Положим 
+\begin{equation*}
+x_0^{(n)}=\left(|u_1|^{q-1}\cdot\operatorname{sgn}u_1,\dots,|u_n|^{q-1}\cdot\operatorname{sgn}u_n,0,0,\dots\right)
+\end{equation*}
+\begin{equation*}
+\left|f(x_0^{(n)})\right|=\sum\limits_{k=1}^{n}|u_k|^q\leqslant\left(\sum\limits_{k=1}^{n}|u_k|^{p\cdot(q-1)}\right)^{\frac{1}{p}}\cdot\|f\|=\left(\sum\limits_{k=1}^{n}|u_k|^{q}\right)^{\frac{1}{p}}\cdot\|f\|
+\end{equation*}
+\begin{equation*}
+	\sum\limits_{k=1}^{n}|u_k|^q\leqslant\left(\sum\limits_{k=1}^{n}|u_k|^{q}\right)^{\frac{1}{p}}\cdot\|f\|
+\end{equation*}
+\begin{equation*}
+	\left(\sum\limits_{k=1}^{n}|u_k|^{q}\right)^{1-\frac{1}{p}}\leqslant\|f\|
+\end{equation*}
+\begin{equation*}
+	\left(\sum\limits_{k=1}^{n}|u_k|^{q}\right)^{\frac{1}{q}}\leqslant\|f\| \quad \forall\, n\in\mathbb{N}
+\end{equation*}
+Следовательно, ряд $\sum\limits_{k=1}^{\infty}|u_k|^{q}$ сходится и при этом $\|u\|\leqslant\|f\|$. Учитывая неравенство Гёльдера, имеем $\|f\|=\|u\|_q$.
+\begin{example}
 	\begin{equation*}
-		f(x)=f\left(\sum\limits_{k=1}^{n}\alpha_k e_k\right)=\sum\limits_{k=1}^{n}\alpha_k f(e_k)
+		X=L^p[0,1], \quad f(x)=\int\limits_{0}^{1}a(t)x(t)\,dt, \quad a\in L^q[0,1], \quad \frac{1}{p}+\frac{1}{q}=1
 	\end{equation*}
-	Обозначим $\xi_k=f(e_k)$, $\xi=(\xi_1,\dots, x_n)$, тогда
-	\begin{equation*}
-		f(x)=\langle x,\xi\rangle
-	\end{equation*}
-	Используя неравенство Коши-Буняковского, имеем
-	\begin{equation*}
-		|f(x)|\leqslant\|x\|\cdot\|\xi\| \Longrightarrow \|f\|\leqslant\|\xi\|
-	\end{equation*}
-	Положим $x=\frac{\xi}{\|\xi\|}$, тогда
-	\begin{equation*}
-		|f(x)|=\left|\langle\frac{\xi}{\|\xi\|},\xi\rangle\right|=\frac{\|\xi\|^2}{\|\xi\|}=\|\xi\| \Longrightarrow \|f\|\geqslant\xi
-	\end{equation*}
-	Таким образом, $\|f\|=\|\xi\|$.
-	\begin{example}
-		\begin{equation*}
-			X=L^p[0,1], \quad f(x)=\int\limits_{0}^{1}a(t)x(t)\,dt, \quad a\in L^q[0,1], \quad \frac{1}{p}+\frac{1}{q}=1
-		\end{equation*}
-	\end{example}
+\end{example}
 Линейность очевидна.
 \begin{equation*}
 	\left|\int\limits_{0}^{1}a(t)x(t)\,dt\right|\leqslant\left(\int\limits_{0}^{1}|x(t)|^p\,dt\right)^{\frac{1}{p}}\cdot\left(\int\limits_{0}^{1}|a(t)|^q\,dt\right)^{\frac{1}{q}}=\|x\|_p\cdot\|a\|_q
 \end{equation*}
 то есть $|f(x)|\leqslant \|a\|_q\cdot \|x\|_p$.
 
-Положим
-\begin{equation*}
-	x(t)=\frac{f}{f},
-\end{equation*}
-тогда
-\begin{equation*}
-	|f(x)|=
-\end{equation*}
-Таким образом, $\|f\|=\|a\|_q$.
+$\|f\|=\|a\|_q$.
 \begin{example}
 	\begin{equation*}
-		X=l^p, \quad 1\leqslant p<\infty
+		X=C[0,1],
 	\end{equation*}
 \end{example}
+\begin{theorem}[Рисс]
+	Для любого $f\in(C[0,1])'$ существует функция $g\in BV[0,1]$ ограниченной вариации, непрерывная слева, $g(0)=0$, такая, что
+	\begin{equation*}
+		f(x)=\int\limits_{0}^{1}x(t)\,dg(t)
+	\end{equation*}
+	При этом $\|f\|=\operatorname{Var}\limits_{[0,1]}(g)$
+\end{theorem}
 \end{document}
